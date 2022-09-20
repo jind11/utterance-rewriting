@@ -25,7 +25,7 @@ Here we would like to rewrite the last utterance to resolve the anaphor "that", 
 Why are Corgis also called Welsh Corgis?
 ```
 
-## How to us this code?
+## How to perform inference?
 
 1. Install the packages by running:
 
@@ -48,3 +48,15 @@ sh ./eval.sh --eval_set data-samples --model redo-t5-large --gpu 0
 ```
 
 Here the argument "eval_set" refers to the data you would like to rewrite. A sample data file "data-samples.json" has been provided. In this file, each sample to be rewritten should be one dictionary in each line and there are two important keys in the dictionary: utterances and reference. "Utterances" is the concatenation of all utterances including the context history and the last utterance to be rewritten. We have three special tokens: "\<USR\>" is put in front of the user utterance, "\<SYS\>" is put before the system utterance, and "\<CUR\>" is put before the last utterance which will be rewritten. "Reference" can be the human-written reference sentence for automatic evaluation, which can be anything if you do not have the ground truth.  
+
+## How to train the model?
+
+1. First download data from this [Google Drive](https://drive.google.com/drive/folders/1WJQngW67dBCVdX8AhkZ0nvKticRAca2a?usp=sharing) and put them in the "data" folder.
+
+2. Run the following command to perform training:
+
+```
+sh ./train.sh --model_dir MODEL_DIR --model_name MODEL_NAME --gpu 0
+```
+
+Here "MODEL_DIR" refers to the directory that contains the model parameters used for model initialization. "MODEL_NAME" is the model name we would like to fine-tune, e.g. t5-large. 
