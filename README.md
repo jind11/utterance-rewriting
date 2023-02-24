@@ -60,3 +60,7 @@ sh ./train.sh --model_dir MODEL_DIR --model_name MODEL_NAME --gpu 0
 ```
 
 Here "MODEL_DIR" refers to the directory that contains the model parameters used for model initialization. "MODEL_NAME" is the model name we would like to fine-tune, e.g. t5-large. 
+
+## Rewritten DECODE Dataset
+
+As mentioned in the paper, we have shown a use case of this rewriting model on the contradiction detection dataset, DECODE, and successfully improve it by several points. Here we provide the rewritten DECODE dateset in this [Google Drive](https://drive.google.com/drive/folders/1nNnBBm5kHXkw26FW27ztUaHEmPgDbIEa?usp=share_link). To be noted, we have provided updated test sets mentioned in the paper. 
